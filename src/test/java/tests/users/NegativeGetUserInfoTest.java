@@ -1,14 +1,17 @@
 package tests.users;
 
 import endpoints.UserInfoGetEndpoint;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import tests.BaseApiTest;
 
-public class NegativeGetUserInfoTest extends BaseApiTest {
+public class NegativeGetUserInfoTest{
+    @Epic("User Tests")
+    @Story("Негативное. Получение списка юзеров")
     @Test
-    @DisplayName("Тест доступа к инф-ии о юзерах без авторизации")
+    @DisplayName("Получение инф-ии о юзерах без авторизации")
     public void getUserInfoNegativeTest() {
-        UserInfoGetEndpoint.getCurrentUser();
+        UserInfoGetEndpoint.getUserWithoutAuth();
     }
 }

@@ -5,6 +5,8 @@ import dto.issue.IssueResponse;
 import endpoints.IssueDeleteEndpoint;
 import endpoints.IssuePostEndpoint;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Story;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -23,9 +25,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class PositivePostIssueTests extends BaseApiTest {
     private String issueIdToDelete;
 
+    @Epic("Issue Tests")
+    @Story("Позитивное. Создание задачи")
     @ParameterizedTest
     @MethodSource("loadIssueData")
-    @DisplayName("Тест создания новой задачи")
+    @DisplayName("Создание новой задачи")
     public void createNewIssueTest(IssuePostRequest request) {
         IssueResponse issue = IssuePostEndpoint.createIssue(request);
         issueIdToDelete = issue.getIdReadable();

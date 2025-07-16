@@ -4,21 +4,19 @@ import dto.common.Leader;
 import dto.issue.CustomFieldRequest;
 import dto.issue.FieldValue;
 import dto.issue.IssuePostRequest;
-import dto.issue.IssueResponse;
-import endpoints.IssueDeleteEndpoint;
 import endpoints.IssuePostEndpoint;
-import org.junit.jupiter.api.AfterEach;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import tests.BaseApiTest;
 
 import java.util.List;
 
-public class NegativePostIssueTests extends BaseApiTest {
-    private String issueIdToDelete;
-
+public class NegativePostIssueTests {
+    @Epic("Issue Tests")
+    @Story("Негативное. Создание задачи")
     @Test
-    @DisplayName("Негативный тест создания новой задачи")
+    @DisplayName("Создание новой задачи")
     public void createNewIssueNegativeTest() {
         List<CustomFieldRequest> fields = List.of(
                 new CustomFieldRequest("Type", "SingleEnumIssueCustomField", new FieldValue("Bug")),
@@ -30,16 +28,6 @@ public class NegativePostIssueTests extends BaseApiTest {
                 "Negative test description.",
                 fields
         );
-        IssueResponse issue = IssuePostEndpoint.createIssue(request);
-        issueIdToDelete = issue.getIdReadable();
-    }
-
-    @AfterEach
-    public void cleanUpCreatedIssue() {
-        if (issueIdToDelete != null) {
-            System.out.println("Удаление задачи с ID: " + issueIdToDelete);
-            IssueDeleteEndpoint.deleteIssue(issueIdToDelete);
-            issueIdToDelete = null;
-        }
+        IssuePostEndpoint.createIssueWrongId(request);
     }
 }

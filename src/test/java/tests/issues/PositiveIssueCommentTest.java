@@ -5,6 +5,8 @@ import dto.issue.*;
 import endpoints.IssueCommentPostEndpoint;
 import endpoints.IssueDeleteEndpoint;
 import endpoints.IssuePostEndpoint;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Story;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -16,9 +18,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PositiveIssueCommentTest extends BaseApiTest {
     private String issueId;
-
+    @Epic("Issue Tests")
+    @Story("Позитивное. Добавление комментария")
     @Test
-    @DisplayName("Тест добавления комментария к задаче")
+    @DisplayName("Добавление комментария к задаче")
     public void addCommentTest() {
         List<CustomFieldRequest> fields = List.of(
                 new CustomFieldRequest("State", "StateIssueCustomField", new FieldValue("Open")));

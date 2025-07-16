@@ -5,6 +5,8 @@ import dto.project.ProjectPostRequest;
 import dto.project.ProjectResponse;
 import endpoints.ProjectDeleteEndpoint;
 import endpoints.ProjectPostEndpoint;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Story;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -16,9 +18,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class PositivePostProjectTests extends BaseApiTest {
     private String projectId;
 
+    @Epic("Project Tests")
+    @Story("Позитивное. Создание проектов")
     @ParameterizedTest
     @CsvFileSource(resources = "/testdata/projectsData.csv", numLinesToSkip = 1)
-    @DisplayName("Тест создания нового проекта")
+    @DisplayName("Создания нового проекта")
     public void createProjectTest(String name, String shortName, String description) {
         Leader leader = new Leader("2-1");
         ProjectPostRequest request = new ProjectPostRequest(name, shortName, leader, description);

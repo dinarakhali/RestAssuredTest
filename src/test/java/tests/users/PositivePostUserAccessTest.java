@@ -5,6 +5,8 @@ import dto.userInfo.UserAccessRequest;
 import dto.userInfo.UserAccessResponse;
 import dto.userInfo.UserInfoResponse;
 import endpoints.*;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Story;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -18,8 +20,10 @@ public class PositivePostUserAccessTest extends BaseApiTest {
     private String projectRingId;
     private String userRingId;
 
+    @Epic("User Tests")
+    @Story("Позитивное. Открытие доступа к проекту")
     @Test
-    @DisplayName("Тест открытия доступа к проекту")
+    @DisplayName("Открытия доступа к проекту")
     public void giveAccessTest() {
         List<ProjectResponse> projects = ProjectGetEndpoint.getProjects();
         projectRingId = projects.stream()
