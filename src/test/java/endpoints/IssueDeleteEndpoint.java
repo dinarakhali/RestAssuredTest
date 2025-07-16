@@ -7,13 +7,11 @@ import static io.restassured.RestAssured.given;
 
 public class IssueDeleteEndpoint {
     public static void deleteIssue(String issueId) {
-        RestAssured.responseSpecification = null;
         given()
                 .when()
                 .delete("api/issues/" + issueId)
                 .then()
-                .spec(Specifications.spec200WithoutContentType())
-                .statusCode(200);
+                .spec(Specifications.spec200WithoutContentType());
     }
 
     public static void deleteIssueNegative(String issueId) {
@@ -21,6 +19,6 @@ public class IssueDeleteEndpoint {
                 .when()
                 .delete("api/issues/" + issueId)
                 .then()
-                .statusCode(404);
+                .spec(Specifications.spec404());
     }
 }

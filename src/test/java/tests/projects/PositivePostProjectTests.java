@@ -7,7 +7,8 @@ import endpoints.ProjectDeleteEndpoint;
 import endpoints.ProjectPostEndpoint;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
 import tests.BaseApiTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -15,19 +16,17 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class PositivePostProjectTests extends BaseApiTest {
     private String projectId;
 
-    @Test
-    @DisplayName("1. Тест создания нового проекта")
-    public void createProjectTest() {
+    @ParameterizedTest
+    @CsvFileSource(resources = "/testdata/projectsData.csv", numLinesToSkip = 1)
+    @DisplayName("Тест создания нового проекта")
+    public void createProjectTest(String name, String shortName, String description) {
         Leader leader = new Leader("2-1");
-        ProjectPostRequest request = new ProjectPostRequest("1 API Project", "1AP",
-                leader, "Описание проекта.");
+        ProjectPostRequest request = new ProjectPostRequest(name, shortName, leader, description);
         ProjectResponse project = ProjectPostEndpoint.createNewProject(request);
         projectId = project.getId();
 
-        String expectedName = "1 API Project";
-        String expectedDescription = "Описание проекта.";
-        assertEquals(expectedName, project.getName());
-        assertEquals(expectedDescription, project.getDescription());
+        assertEquals(name, project.getName());
+        assertEquals(description, project.getDescription());
     }
 
     @AfterEach

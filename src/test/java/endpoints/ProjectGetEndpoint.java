@@ -2,6 +2,7 @@ package endpoints;
 
 import dto.project.ProjectResponse;
 import io.restassured.common.mapper.TypeRef;
+import utils.Specifications;
 
 import java.util.List;
 
@@ -14,8 +15,9 @@ public class ProjectGetEndpoint {
                 .when()
                 .get("api/admin/projects")
                 .then()
+                .spec(Specifications.spec200())
                 .extract()
-                .as(new TypeRef<List<ProjectResponse>>() {
+                .as(new TypeRef<>() {
                 });
     }
 }

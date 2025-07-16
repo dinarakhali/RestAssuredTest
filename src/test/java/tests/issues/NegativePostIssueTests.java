@@ -10,15 +10,15 @@ import endpoints.IssuePostEndpoint;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import tests.BaseApiTest400;
+import tests.BaseApiTest;
 
 import java.util.List;
 
-public class NegativePostIssueTests extends BaseApiTest400 {
+public class NegativePostIssueTests extends BaseApiTest {
     private String issueIdToDelete;
 
     @Test
-    @DisplayName("1. Негативный тест создания новой задачи")
+    @DisplayName("Негативный тест создания новой задачи")
     public void createNewIssueNegativeTest() {
         List<CustomFieldRequest> fields = List.of(
                 new CustomFieldRequest("Type", "SingleEnumIssueCustomField", new FieldValue("Bug")),

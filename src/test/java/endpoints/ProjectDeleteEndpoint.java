@@ -7,7 +7,6 @@ import static io.restassured.RestAssured.given;
 
 public class ProjectDeleteEndpoint {
     public static void deleteProject(String projectId) {
-        RestAssured.responseSpecification = null;
         given()
                 .when()
                 .delete("api/admin/projects/" + projectId)
@@ -16,7 +15,6 @@ public class ProjectDeleteEndpoint {
     }
 
     public static void deleteProjectWithoutAuth(String projectId) {
-        RestAssured.responseSpecification = null;
         given()
                 .when()
                 .delete("api/admin/projects/" + projectId)

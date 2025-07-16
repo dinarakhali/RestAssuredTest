@@ -2,6 +2,7 @@ package endpoints;
 
 import dto.userInfo.UserInfoResponse;
 import io.restassured.common.mapper.TypeRef;
+import utils.Specifications;
 
 import java.util.List;
 
@@ -14,6 +15,7 @@ public class UserInfoGetEndpoint {
                 .when()
                 .get("/api/users/me")
                 .then()
+                .spec(Specifications.spec200())
                 .extract()
                 .as(UserInfoResponse.class);
     }
@@ -24,6 +26,7 @@ public class UserInfoGetEndpoint {
                 .when()
                 .get("/api/users")
                 .then()
+                .spec(Specifications.spec200())
                 .extract()
                 .as(new TypeRef<>() {
                 });

@@ -2,6 +2,7 @@ package endpoints;
 
 import dto.issue.IssueCommentRequest;
 import dto.issue.IssueCommentResponse;
+import utils.Specifications;
 
 import static io.restassured.RestAssured.given;
 
@@ -13,6 +14,7 @@ public class IssueCommentPostEndpoint {
                 .when()
                 .post("/api/issues/" + issueId + "/comments")
                 .then()
+                .spec(Specifications.spec200())
                 .extract()
                 .as(IssueCommentResponse.class);
     }

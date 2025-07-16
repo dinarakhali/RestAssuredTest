@@ -1,0 +1,86 @@
+[
+  {
+    "projectId": "0-84",
+    "summary": "Test summary 1",
+    "description": "Description 1",
+    "fields": [
+      {
+        "name": "Type",
+        "type": "SingleEnumIssueCustomField",
+        "value": {
+          "name": "Bug"
+        }
+      },
+      {
+        "name": "State",
+        "type": "StateIssueCustomField",
+        "value": {
+          "name": "Open"
+        }
+      }
+    ]
+  },
+  {
+    "projectId": "0-84",
+    "summary": "Test summary 2",
+    "description": "Description 2",
+    "fields": [
+      {
+        "name": "Type",
+        "type": "SingleEnumIssueCustomField",
+        "value": {
+          "name": "Feature"
+        }
+      },
+      {
+        "name": "State",
+        "type": "StateIssueCustomField",
+        "value": {
+          "name": "Submitted"
+        }
+      }
+    ]
+  },
+  {
+    "projectId": "0-84",
+    "summary": "Test summary 3",
+    "description": "Description 3",
+    "fields": [
+      {
+        "name": "Type",
+        "type": "SingleEnumIssueCustomField",
+        "value": {
+          "name": "Feature"
+        }
+      },
+      {
+        "name": "State",
+        "type": "StateIssueCustomField",
+        "value": {
+          "name": "Open"
+        }
+      }
+    ]
+  },
+  {
+    "projectId": "0-84",
+    "summary": "Test summary 4",
+    "description": "Description 4",
+    "fields": [
+      {
+        "name": "Type",
+        "type": "SingleEnumIssueCustomField",
+        "value": {
+          "name": "Bug"
+        }
+      },
+      {
+        "name": "State",
+        "type": "StateIssueCustomField",
+        "value": {
+          "name": "Open"
+        }
+      }
+    ]
+  }
+]

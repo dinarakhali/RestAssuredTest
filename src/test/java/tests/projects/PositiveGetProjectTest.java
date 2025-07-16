@@ -12,13 +12,9 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class PositiveGetProjectTest extends BaseApiTest {
     @Test
-    @DisplayName("1. Тест получения информации о созданных проектах")
+    @DisplayName("Тест получения информации о созданных проектах")
     public void getProjectsTest() {
         List<ProjectResponse> projects = ProjectGetEndpoint.getProjects();
-        projects.stream()
-                .map(project -> "Проект: " + project.getName() + " (" + project.getId() + ")")
-                .forEach(System.out::println);
-
         assertNotNull(projects, "Провал. Не получен список проектов.");
     }
 }

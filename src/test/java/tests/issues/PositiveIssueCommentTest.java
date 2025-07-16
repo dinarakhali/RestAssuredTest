@@ -18,7 +18,7 @@ public class PositiveIssueCommentTest extends BaseApiTest {
     private String issueId;
 
     @Test
-    @DisplayName("1. Тест добавления комментария к задаче")
+    @DisplayName("Тест добавления комментария к задаче")
     public void addCommentTest() {
         List<CustomFieldRequest> fields = List.of(
                 new CustomFieldRequest("State", "StateIssueCustomField", new FieldValue("Open")));

@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PositiveGetUserInfoTests extends BaseApiTest {
     @Test
-    @DisplayName("1. Тест валидности полей пользователя")
+    @DisplayName("Тест валидности полей пользователя")
     public void getUserInfoTest() {
         UserInfoResponse user = UserInfoGetEndpoint.getCurrentUser();
         System.out.println("User object: " + user);

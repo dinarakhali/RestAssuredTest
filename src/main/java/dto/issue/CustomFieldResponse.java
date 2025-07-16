@@ -12,7 +12,5 @@ import lombok.NoArgsConstructor;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CustomFieldResponse {
     private String name;
-    @JsonProperty("$type")
-    private String type;
     private Object value;
 }
