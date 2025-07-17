@@ -11,11 +11,10 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
-import tests.BaseApiTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class PositivePostProjectTests extends BaseApiTest {
+public class PositivePostProjectTests {
     private String projectId;
 
     @Epic("Project Tests")

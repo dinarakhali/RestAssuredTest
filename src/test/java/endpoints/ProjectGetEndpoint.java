@@ -1,6 +1,7 @@
 package endpoints;
 
 import dto.project.ProjectResponse;
+
 import io.qameta.allure.Step;
 import io.restassured.common.mapper.TypeRef;
 import utils.Specifications;
@@ -13,6 +14,7 @@ public class ProjectGetEndpoint {
     @Step("Отправка GET-запроса")
     public static List<ProjectResponse> getProjects() {
         return given()
+                .spec(Specifications.specRequest())
                 .queryParam("fields", "id,name,shortName,description,ringId")
                 .when()
                 .get("api/admin/projects")

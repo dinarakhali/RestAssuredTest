@@ -5,13 +5,13 @@ import dto.issue.IssueResponse;
 import endpoints.IssueDeleteEndpoint;
 import endpoints.IssuePostEndpoint;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
 import io.qameta.allure.Epic;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
-import tests.BaseApiTest;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -22,7 +22,7 @@ import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class PositivePostIssueTests extends BaseApiTest {
+public class PositivePostIssueTests {
     private String issueIdToDelete;
 
     @Epic("Issue Tests")

@@ -11,6 +11,7 @@ public class IssuePostEndpoint {
     @Step("Отправка POST-запроса")
     public static IssueResponse createIssue(IssuePostRequest request) {
         return given()
+                .spec(Specifications.specRequest())
                 .queryParam("fields", "idReadable,summary,description,customFields(name,value(state,name))")
                 .body(request)
                 .when()

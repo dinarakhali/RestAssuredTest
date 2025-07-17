@@ -10,13 +10,12 @@ import io.qameta.allure.Story;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import tests.BaseApiTest;
 
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class PositivePostUserAccessTest extends BaseApiTest {
+public class PositivePostUserAccessTest {
     private String projectRingId;
     private String userRingId;
 

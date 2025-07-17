@@ -2,15 +2,13 @@ package tests.projects;
 
 import dto.common.Leader;
 import dto.project.ProjectPostRequest;
-import dto.project.ProjectResponse;
-import endpoints.ProjectPostEndpoint;
+
 import io.qameta.allure.Epic;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import tests.BaseApiTest;
 
-public class NegativePostProjectTests extends BaseApiTest {
+public class NegativePostProjectTests {
     @Epic("Project Tests")
     @Story("Негативное. Создание проекта")
     @Test

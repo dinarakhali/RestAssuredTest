@@ -6,7 +6,7 @@ import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-public class NegativeGetUserInfoTest{
+public class NegativeGetUserInfoTest {
     @Epic("User Tests")
     @Story("Негативное. Получение списка юзеров")
     @Test

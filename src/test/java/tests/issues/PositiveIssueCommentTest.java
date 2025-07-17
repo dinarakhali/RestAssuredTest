@@ -5,18 +5,18 @@ import dto.issue.*;
 import endpoints.IssueCommentPostEndpoint;
 import endpoints.IssueDeleteEndpoint;
 import endpoints.IssuePostEndpoint;
+
 import io.qameta.allure.Epic;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import tests.BaseApiTest;
 
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class PositiveIssueCommentTest extends BaseApiTest {
+public class PositiveIssueCommentTest {
     private String issueId;
     @Epic("Issue Tests")
     @Story("Позитивное. Добавление комментария")

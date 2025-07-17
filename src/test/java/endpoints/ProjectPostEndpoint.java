@@ -2,6 +2,7 @@ package endpoints;
 
 import dto.project.ProjectPostRequest;
 import dto.project.ProjectResponse;
+
 import io.qameta.allure.Step;
 import utils.Specifications;
 
@@ -11,6 +12,7 @@ public class ProjectPostEndpoint {
     @Step("Отправка POST-запроса")
     public static ProjectResponse createNewProject(ProjectPostRequest request) {
         return given()
+                .spec(Specifications.specRequest())
                 .queryParam("fields", "id,shortName,name,description")
                 .body(request)
                 .when()

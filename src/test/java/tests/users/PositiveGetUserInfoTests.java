@@ -6,11 +6,10 @@ import io.qameta.allure.Epic;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import tests.BaseApiTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class PositiveGetUserInfoTests extends BaseApiTest {
+public class PositiveGetUserInfoTests {
     @Epic("User Tests")
     @Story("Позитивное. Получение информации о юзере")
     @Test

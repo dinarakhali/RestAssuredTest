@@ -11,6 +11,7 @@ public class IssueCommentPostEndpoint {
     @Step("Отправка POST-запроса")
     public static IssueCommentResponse addComment(IssueCommentRequest request, String issueId) {
         return given()
+                .spec(Specifications.specRequest())
                 .queryParam("fields", "text,id")
                 .body(request)
                 .when()

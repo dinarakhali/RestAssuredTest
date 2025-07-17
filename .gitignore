@@ -26,24 +26,13 @@ out/
 *.bak
 *.swp
 
+# --- Allure ---
+allure-results/
+allure-report/
+
 # --- OS-specific ---
 .DS_Store
 Thumbs.db
-
-# --- Eclipse ---
-.classpath
-.project
-.settings/
-.factorypath
-.apt_generated
-.sts4-cache
-
-# --- NetBeans ---
-nbbuild/
-nbdist/
-dist/
-nbproject/private/
-build/
 
 # --- Optional: ignore local .env files if you use them ---
 *.env
